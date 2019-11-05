@@ -1,0 +1,28 @@
+@import '../commons/colors.scss';
+@import '../commons/mixins.scss';
+
+.Footer {
+  width: 100%;
+  height: 50px;
+  @include center-items;
+  &__container {
+    margin: auto;
+    list-style: none;
+    display: inline-flex;
+    
+    li {
+      text-align: center;
+      margin: 0 15px 0 0;
+      
+      a {
+        font-size: 11px;
+        color: $white;
+        text-align: center;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
