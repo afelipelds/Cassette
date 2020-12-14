@@ -1,4 +1,5 @@
 @import 'commons/colors.scss';
+@import 'Media.scss';
 /************************** global */
   
 body {
@@ -8,3 +9,4 @@ body {
   font-family: 'Gayathri-thin', sans-serif;
   background-image: linear-gradient(to right, $gray 70%, $purple);
 }
+

@@ -1,0 +1,41 @@
+@media only screen and (max-width: 600px) {
+  .Header {
+    &__logo {
+      width: 50%;
+      margin: 0 auto;
+    }
+
+    &__profile {
+      &--image {
+        img {
+          width: 30%;
+        }
+        p {
+          display: none;
+        }
+      }
+    }
+  }
+  .Login {
+    margin: 30px;
+
+    &__container {
+      background: transparent;
+      border: none;
+      padding: 0;
+      width: 100%;
+    }
+  }
+  .Footer {
+    margin: 20px 0;
+    justify-content: flex-start;
+    &__container {
+      display: block;
+      margin: 0 30px;
+      padding: 0;
+      li {
+        text-align: left;
+      }
+    }
+  }
+}
