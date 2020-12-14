@@ -1,0 +1,34 @@
+@import "../commons/colors.scss";
+
+.Carousel {
+  width: 100%;
+  padding: 30px;
+  overflow: auto;
+  position: relative;
+  box-sizing: border-box;
+
+  &__container {
+    white-space: nowrap;
+    margin: 70px 0;
+    padding-bottom: 15px;
+    &:hover {
+      .Carousel {
+        &--item {
+          opacity: 0.3;
+          &:hover {
+            transform: scale(1.5);
+            opacity: 1;
+
+            .Carousel {
+              &--item {
+                &__details {
+                  opacity: 1;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
