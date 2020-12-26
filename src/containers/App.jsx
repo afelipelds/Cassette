@@ -16,42 +16,40 @@ const App = () => {
     trends: [],
     originals: [],
   });
-  // useEffect( () => {
-  //     fetch(API)
-  //         .then( response => response.json() )
-  //         .then( data => setVideos(data) ) /** Se asigna nuevos valores a videos */
+  useEffect(() => {
+    fetch(API)
+      .then((response) => response.json())
+      .then((data) => setVideos(data)); /** Se asigna nuevos valores a videos */
 
-  //         console.log(videos)
-  // }, [] );
+    console.log(videos);
+  }, []);
 
   return (
     <>
       <Header />
       {/* <Register /> */}
       <Search />
-      {/* {videos.mylist.length > 0 && ( */}
+
       <Categories title='Mi lista'>
         <Carousel>
-          {/* <CarouselItem /> */}
+          <CarouselItem />
         </Carousel>
       </Categories>
-      {/* )} */}
 
       <Categories title='Originals'>
         <Carousel>
-          {/* <CarouselItem /> */}
+          <CarouselItem />
         </Carousel>
       </Categories>
 
-      {/* {videos.trends !== undefined && ( */}
       <Categories title='Trend'>
         <Carousel>
-          {/* {videos.trends.map((item) => {
-            // <CarouselItem key={item.id} {...item} />;
-          })} */}
+          {videos.trends.map((item) => {
+            <CarouselItem key={item.id} />;
+          })}
         </Carousel>
       </Categories>
-      {/* )} */}
+
       {/* <Podcast /> */}
       {/* <Login /> */}
       <Footer />

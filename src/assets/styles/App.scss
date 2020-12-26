@@ -1,12 +1,13 @@
 @import 'commons/colors.scss';
 @import 'Media.scss';
+@import 'Vars.scss';
 /************************** global */
   
 body {
   margin: 0;
   padding: 0;
   background-color: $white-white;
-  font-family: 'Gayathri-thin', sans-serif;
-  background-color: chocolate;
+  font-family: $theme-font;
+  background-color: rgb(73, 160, 161);
 }
 
