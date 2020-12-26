@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "build": "webpack --mode production",
-    "start": "webpack serve --mode development --env development"
+    "start": "webpack serve --mode development --env development",
+    "json-server": "npx json-server --watch initialState.json"
   },
   "keywords": [
     "react",

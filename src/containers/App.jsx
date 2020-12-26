@@ -10,7 +10,7 @@ import Carousel from '../components/Carousel';
 import CarouselItem from '../components/CarouselItem';
 
 const App = () => {
-  const API = 'http://localhost:3000/initalState';
+  const API = 'http://localhost:3000/initialState';
   const [videos, setVideos] = useState({
     mylist: [],
     trends: [],
@@ -45,7 +45,9 @@ const App = () => {
       <Categories title='Trend'>
         <Carousel>
           {videos.trends.map((item) => {
-            <CarouselItem key={item.id} />;
+            return (
+              <CarouselItem key={item.id} />
+            );
           })}
         </Carousel>
       </Categories>
