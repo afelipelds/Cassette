@@ -4,7 +4,7 @@ import '../assets/styles/components/Carousel.scss'
 const Carousel = ({ children }) => (
     <section className={"Carousel Carousel__mylist"}>
       <div className={"Carousel__container"}>
-        {children}
+        {children ? children : 'Nothing returned'}
       </div>
     </section>
 )

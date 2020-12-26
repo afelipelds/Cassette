@@ -8,6 +8,10 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
   },
+  mode: 'development',
+  devServer: {
+    port: 8088,
+  },
   resolve: {
     extensions: ['.js', '.jsx'],
   },
@@ -33,9 +37,7 @@ module.exports = {
       {
         test: /\.(s*)css$/,
         use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-          },
+          MiniCssExtractPlugin.loader,
           'css-loader',
           'sass-loader',
         ],
@@ -45,9 +47,6 @@ module.exports = {
         use: [
           {
             loader: 'file-loader',
-            options: {
-              name: 'assets/[name].[hash].[ext]'
-            }
           },
         ],
       },
@@ -57,6 +56,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './public/index.html',
       filename: './index.html',
+      title: 'Cassette',
     }),
     new MiniCssExtractPlugin({
       filename: './assets/[name].css',
