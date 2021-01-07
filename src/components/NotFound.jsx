@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../assets/styles/components/NotFound.scss';
 
 const NotFound = () => (
@@ -8,7 +9,11 @@ const NotFound = () => (
       <h2 className='u-fontSize30 glitch' data-text=' ERROR '>Nothing found</h2>
     </div>
     <div>
-      <p className='return'><a href='index.html'>Regresar al inicio</a></p>
+      <p className='return'>
+        <Link to='/'>
+          Regresar al inicio
+        </Link>
+      </p>
     </div>
   </section>
 );

@@ -1,20 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import '../assets/styles/App.scss';
+import React from 'react';
 import Search from '../components/Search';
 import Categories from '../components/Categories';
 import Carousel from '../components/Carousel';
 import CarouselItem from '../components/CarouselItem';
 import useInitialState from '../hooks/useInitialState';
+import '../assets/styles/App.scss';
 
-const App = () => {
+const Home = () => {
   const API = 'http://localhost:3000/initialState';
   const initialState = useInitialState(API);
 
   return (
     <>
-      <Header />
       <Search />
 
       <Categories title='Mi lista'>
@@ -47,9 +44,8 @@ const App = () => {
         </Carousel>
       </Categories>
 
-      <Footer />
     </>
   );
 };
 
-export default App;
+export default Home;

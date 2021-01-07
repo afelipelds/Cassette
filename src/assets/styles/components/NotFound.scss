@@ -3,8 +3,11 @@
 .Error {    
   height: calc(100vh - 100px);
   color: $white;
+  display: flex ;
+  align-content: center;
+  justify-content: center;
   flex-flow: column nowrap;
-
+  
   &__container {
     text-align: center;
     margin: auto;
@@ -45,7 +48,10 @@
     }
   }
   .return {
-    @include center-things;
+    display: flex ;
+    align-content: center;
+    justify-content: center;
+
     a {
       color: $white-white;
       font-weight: bold;
@@ -72,5 +78,4 @@
       }
     }
   }
-  @include center-things;
 }

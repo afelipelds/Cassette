@@ -9,9 +9,6 @@ module.exports = {
     filename: 'bundle.js',
   },
   mode: 'development',
-  devServer: {
-    port: 8088,
-  },
   resolve: {
     extensions: ['.js', '.jsx'],
   },
@@ -51,6 +48,10 @@ module.exports = {
         ],
       },
     ],
+  },
+  devServer: {
+    historyApiFallback: true,
+    port: 8088,
   },
   plugins: [
     new HtmlWebpackPlugin({
