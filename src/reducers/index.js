@@ -9,7 +9,6 @@ const reducer = (state, action) => {
           ...state,
         };
       }
-
       //return the item that is being added alongside the state
       return {
         ...state,
@@ -17,10 +16,15 @@ const reducer = (state, action) => {
       };
 
     case 'DELETE_FAVORITE':
-      console.log('state.myList -> ', state.myList);
       return {
         ...state,
         myList: state.myList.filter((item) => item.id !== action.payload),
+      };
+
+    case 'REQUEST_LOGIN':
+      return {
+        ...state,
+        user: action.payload,
       };
 
     default:
