@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import gravatar from '../utils/gravatar';
 import logo from '../assets/img/logo_.png';
 import { logoutRequest } from '../actions';
@@ -9,15 +10,20 @@ import userLogo from '../assets/img/icon_user.png';
 import '../assets/styles/components/Header.scss';
 
 const Header = (props) => {
-  const { user } = props;
+  const { user, isLogin, isRegister } = props;
   const hasUser = Object.keys(user).length > 0;
 
   const handleLogout = () => {
     props.logoutRequest({});
   };
 
+  const headerClass = classNames('header', {
+    isLogin,
+    isRegister,
+  });
+
   return (
-    <header className='Header'>
+    <header className={`Header ${headerClass}`}>
       <div className='Header__logo'>
         <Link to='/'>
           <img src={logo} alt='CASSETTe' />
