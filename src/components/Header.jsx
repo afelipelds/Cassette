@@ -31,7 +31,7 @@ const Header = (props) => {
         <ul className='Header__profile--menu'>
           { hasUser ? (
             <>
-              <li><a href='/'>{user.name}</a></li>
+              <li><Link to='/account'>{user.name}</Link></li>
               <li><a href='#logout' onClick={handleLogout}>Cerrar sesión</a></li>
             </>
           ) : (

@@ -1,4 +1,4 @@
-import { SET_FAVORITE, DELETE_FAVORITE, LOGIN_REQUEST, LOGOUT_REQUEST } from '../utils/constants';
+import { SET_FAVORITE, DELETE_FAVORITE, LOGIN_REQUEST, LOGOUT_REQUEST, REGISTER_REQUEST } from '../utils/constants';
 
 const reducer = (state, action) => {
   const existsFavorite = state.myList.find((item) => item.id === action.payload.id);
@@ -30,6 +30,12 @@ const reducer = (state, action) => {
       };
 
     case LOGOUT_REQUEST:
+      return {
+        ...state,
+        user: action.payload,
+      };
+
+    case REGISTER_REQUEST:
       return {
         ...state,
         user: action.payload,
