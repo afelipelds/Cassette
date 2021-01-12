@@ -1,17 +1,17 @@
 import React from 'react';
-import '../assets/styles/components/Player.scss';
+import '../assets/styles/containers/Player.scss';
 
 const Player = (props) => {
 
   return (
     <div>
-      <div className='player'>
+      <div className='Player'>
         <video controls={true}>
           <source src='' type='video/mp4' />
         </video>
       </div>
-      <div className='player-back'>
-        <button type='button'>
+      <div className='Player-back'>
+        <button type='button' onClick={() => props.history.goBack()}>
           Regresar
         </button>
       </div>
