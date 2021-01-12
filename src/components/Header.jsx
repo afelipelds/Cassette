@@ -1,15 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import gravatar from '../utils/gravatar';
 import logo from '../assets/img/logo_.png';
+import { logoutRequest } from '../actions';
 import userLogo from '../assets/img/icon_user.png';
 import '../assets/styles/components/Header.scss';
 
 const Header = (props) => {
   const { user } = props;
   const hasUser = Object.keys(user).length > 0;
-  console.log(hasUser);
+
+  const handleLogout = () => {
+    props.logoutRequest({});
+  };
+
   return (
     <header className='Header'>
       <div className='Header__logo'>
@@ -19,19 +25,20 @@ const Header = (props) => {
       </div>
       <div className='Header__profile'>
         <div className='Header__profile--image'>
-          {console.log(hasUser)}
-          {
-            hasUser ? (
-              <img src={gravatar(user.email)} alt={user.email} />
-            ) : (
-              <img src={userLogo} alt='' />
-            )
-          }
+          <img src={hasUser ? gravatar(user.email) : userLogo} alt={user.email} />
           <p>Perfil</p>
         </div>
         <ul className='Header__profile--menu'>
-          <li><Link to='/account'>Cuenta</Link></li>
-          <li><Link to='/login'>Iniciar Sesión</Link></li>
+          { hasUser ? (
+            <>
+              <li><a href='/'>{user.name}</a></li>
+              <li><a href='#logout' onClick={handleLogout}>Cerrar sesión</a></li>
+            </>
+          ) : (
+            <>
+              <li><Link to='/login'>Iniciar sesión</Link></li>
+            </>
+          )}
         </ul>
       </div>
     </header>
@@ -44,4 +51,13 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, null)(Header);
+const mapDispatchToProps = {
+  logoutRequest,
+};
+
+Header.propTypes = {
+  user: PropTypes.object,
+  logoutRequest: PropTypes.func,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

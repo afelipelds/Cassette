@@ -11,7 +11,6 @@ const Login = (props) => {
     email: '',
     password: '',
   });
-
   const handleInput = (event) => {
     setFormValues({
       ...formValues,
@@ -51,6 +50,7 @@ const Login = (props) => {
             id='password'
             placeholder='Contraseña'
             onChange={handleInput}
+            autoComplete='on'
           />
           <button className='button' type='submit'>Iniciar sesión</button>
           <div className='Login__container--remember-me'>
