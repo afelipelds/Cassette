@@ -1,4 +1,4 @@
-import { SET_FAVORITE, DELETE_FAVORITE, LOGIN_REQUEST, LOGOUT_REQUEST, REGISTER_REQUEST, GET_VIDEO_SOURCE } from '../utils/constants';
+import { SET_FAVORITE, DELETE_FAVORITE, LOGIN_REQUEST, LOGOUT_REQUEST, REGISTER_REQUEST, GET_VIDEO_SOURCE, SEARCH_VIDEO } from '../utils/constants';
 
 const reducer = (state, action) => {
   const existsFavorite = state.myList.find((item) => item.id === action.payload.id);
@@ -47,6 +47,21 @@ const reducer = (state, action) => {
         playing: state.trends.find((item) => item.id === Number(action.payload)) ||
                  state.originals.find((item) => item.id === Number(action.payload)) ||
                  [],
+      };
+
+    case SEARCH_VIDEO:
+      const videos = [ ...state.trends, ...state.originals ];
+
+      if (action.payload === '') {
+        return {
+          ...state,
+          searchVideo: [],
+        };
+      };
+
+      return {
+        ...state,
+        searchVideo: videos.filter((item) => item.title.toLowerCase().includes(action.payload)),
       };
 
     default:

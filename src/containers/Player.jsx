@@ -6,6 +6,7 @@ import '../assets/styles/containers/Player.scss';
 
 const Player = (props) => {
   const { playing, match } = props;
+  console.log('playing', playing);
   const { id } = match.params;
 
   const hasPlaying = Object.keys(playing).length > 0;

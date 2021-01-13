@@ -1,4 +1,12 @@
-import { SET_FAVORITE, DELETE_FAVORITE, LOGIN_REQUEST, LOGOUT_REQUEST, REGISTER_REQUEST, GET_VIDEO_SOURCE } from '../utils/constants';
+import {
+  SET_FAVORITE,
+  DELETE_FAVORITE,
+  LOGIN_REQUEST,
+  LOGOUT_REQUEST,
+  REGISTER_REQUEST,
+  GET_VIDEO_SOURCE,
+  SEARCH_VIDEO,
+} from '../utils/constants';
 
 export const setFavorite = (payload) => ({
   type: SET_FAVORITE,
@@ -27,5 +35,10 @@ export const registerRequest = (payload) => ({
 
 export const getVideoSource = (payload) => ({
   type: GET_VIDEO_SOURCE,
+  payload,
+});
+
+export const searchVideo = (payload) => ({
+  type: SEARCH_VIDEO,
   payload,
 });

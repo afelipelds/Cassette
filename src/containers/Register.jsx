@@ -25,7 +25,7 @@ const Register = (props) => {
     props.history.push('/');
   };
 
-  return ( 
+  return (
     <>
       <Header className='Header' isRegister />
       <section className='Register'>
